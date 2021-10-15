@@ -457,9 +457,9 @@ abstract class Speedometer @JvmOverloads constructor(
         canvas.save()
         canvas.rotate(90f + getStartDegree(), size * .5f, size * .5f)
         val everyDegree = (getEndDegree() - getStartDegree()) / (marksNumber + 1f)
-        for (i in 1..marksNumber) {
-            canvas.rotate(everyDegree, size * .5f, size * .5f)
+        for (i in 0..marksNumber+1) {
             canvas.drawPath(markPath, markPaint)
+            canvas.rotate(everyDegree, size * .5f, size * .5f)
         }
         canvas.restore()
     }
