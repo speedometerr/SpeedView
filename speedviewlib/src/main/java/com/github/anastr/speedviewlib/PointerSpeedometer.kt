@@ -112,6 +112,7 @@ open class PointerSpeedometer @JvmOverloads constructor(
         val a = context.theme.obtainStyledAttributes(attrs, R.styleable.PointerSpeedometer, 0, 0)
 
         speedometerColor = a.getColor(R.styleable.PointerSpeedometer_sv_speedometerColor, speedometerColor)
+        overSpeedometerColor = a.getColor(R.styleable.PointerSpeedometer_sv_overSpeedometerColor, overSpeedometerColor)
         pointerColor = a.getColor(R.styleable.PointerSpeedometer_sv_pointerColor, pointerColor)
         circlePaint.color = a.getColor(R.styleable.PointerSpeedometer_sv_centerCircleColor, circlePaint.color)
         centerCircleRadius = a.getDimension(R.styleable.SpeedView_sv_centerCircleRadius, centerCircleRadius)

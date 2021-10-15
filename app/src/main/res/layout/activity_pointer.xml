@@ -19,6 +19,7 @@
         android:layout_gravity="center_horizontal"
         app:sv_backgroundCircleColor="@android:color/transparent"
         app:sv_centerCircleColor="@android:color/transparent"
+        app:sv_overSpeedometerColor="#FFFF5E5E"
         app:sv_centerCircleRadius="0dp"
         app:sv_markColor="#FFFFFFFF"
         app:sv_markHeight="16dp"

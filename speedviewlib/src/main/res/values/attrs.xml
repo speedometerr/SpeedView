@@ -2,6 +2,7 @@
 <resources>
 
     <attr name="sv_speedometerColor" format="color"/>
+    <attr name="sv_overSpeedometerColor" format="color"/>
     <attr name="sv_speedometerBackColor" format="color"/>
     <attr name="sv_centerCircleColor" format="color" />
     <attr name="sv_centerCircleRadius" format="dimension" />
@@ -154,6 +155,7 @@
         <attr name="sv_centerCircleColor" />
         <attr name="sv_centerCircleRadius" />
         <attr name="sv_speedometerColor" />
+        <attr name="sv_overSpeedometerColor" />
         <attr name="sv_pointerColor" format="color"/>
         <attr name="sv_withPointer" format="boolean"/>
     </declare-styleable>
