@@ -450,6 +450,7 @@ abstract class Speedometer @JvmOverloads constructor(
      */
     protected fun drawMarks(canvas: Canvas) {
         markPath.reset()
+        // test
         markPath.moveTo(size * .5f, marksPadding + padding)
         markPath.lineTo(size * .5f, marksPadding + markHeight + padding)
 
