@@ -18,12 +18,14 @@ open class PointerSpeedometer @JvmOverloads constructor(
 ) : Speedometer(context, attrs, defStyleAttr) {
 
     private val speedometerPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val overSpeedometerPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val pointerPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val pointerBackPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val circlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val speedometerRect = RectF()
 
     private var speedometerColor = 0xFFEEEEEE.toInt()
+    private var overSpeedometerColor = 0xFFFF5E5E.toInt()
     private var pointerColor = 0xFFFFFFFF.toInt()
 
     private var withPointer = true
@@ -96,7 +98,9 @@ open class PointerSpeedometer @JvmOverloads constructor(
 
     private fun init() {
         speedometerPaint.style = Paint.Style.STROKE
-        speedometerPaint.strokeCap = Paint.Cap.ROUND
+        speedometerPaint.strokeCap = Paint.Cap.BUTT
+        overSpeedometerPaint.style = Paint.Style.STROKE
+        overSpeedometerPaint.strokeCap = Paint.Cap.BUTT
         circlePaint.color = 0xFFFFFFFF.toInt()
     }
 
@@ -133,16 +137,25 @@ open class PointerSpeedometer @JvmOverloads constructor(
 
     private fun initDraw() {
         speedometerPaint.strokeWidth = speedometerWidth
-        speedometerPaint.shader = updateSweep()
+        speedometerPaint.color = speedometerColor
+        overSpeedometerPaint.strokeWidth = speedometerWidth
+        overSpeedometerPaint.color = overSpeedometerColor
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         initDraw()
 
-        val roundAngle = getRoundAngle(speedometerWidth, speedometerRect.width())
-        canvas.drawArc(speedometerRect, getStartDegree() + roundAngle
-                , (getEndDegree() - getStartDegree()) - roundAngle * 2f, false, speedometerPaint)
+        val recommendedSpeed = 40f
+        val recommendedDegree = getDegreeAtSpeed(recommendedSpeed)
+        var sweepAngle = (recommendedDegree - getStartDegree())
+        canvas.drawArc(speedometerRect, getStartDegree().toFloat(), sweepAngle, false, speedometerPaint)
+        if(currentSpeed > recommendedSpeed) {
+            sweepAngle = (getEndDegree() - getStartDegree()) * getOffsetSpeed()  - (recommendedDegree - getStartDegree())
+            canvas.drawArc(speedometerRect, recommendedDegree, sweepAngle, false, overSpeedometerPaint)
+        }
+
+        drawMarks(canvas)
 
         if (withPointer) {
             canvas.save()
@@ -168,25 +181,10 @@ open class PointerSpeedometer @JvmOverloads constructor(
         val c = createBackgroundBitmapCanvas()
         initDraw()
 
-        drawMarks(c)
-
         if (tickNumber > 0)
             drawTicks(c)
         else
             drawDefMinMaxSpeedPosition(c)
-    }
-
-    private fun updateSweep(): SweepGradient {
-        val startColor = Color.argb(150, Color.red(speedometerColor), Color.green(speedometerColor), Color.blue(speedometerColor))
-        val color2 = Color.argb(220, Color.red(speedometerColor), Color.green(speedometerColor), Color.blue(speedometerColor))
-        val color3 = Color.argb(70, Color.red(speedometerColor), Color.green(speedometerColor), Color.blue(speedometerColor))
-        val endColor = Color.argb(15, Color.red(speedometerColor), Color.green(speedometerColor), Color.blue(speedometerColor))
-        val position = getOffsetSpeed() * (getEndDegree() - getStartDegree()) / 360f
-        val sweepGradient = SweepGradient(size * .5f, size * .5f, intArrayOf(startColor, color2, speedometerColor, color3, endColor, startColor), floatArrayOf(0f, position * .5f, position, position, .99f, 1f))
-        val matrix = Matrix()
-        matrix.postRotate(getStartDegree().toFloat(), size * .5f, size * .5f)
-        sweepGradient.setLocalMatrix(matrix)
-        return sweepGradient
     }
 
     private fun updateRadial() {
