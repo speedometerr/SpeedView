@@ -24,8 +24,8 @@ open class PointerSpeedometer @JvmOverloads constructor(
     private val circlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val speedometerRect = RectF()
 
-    private var speedometerColor = 0xFFEEEEEE.toInt()
-    private var overSpeedometerColor = 0xFFFF5E5E.toInt()
+    private var speedometerColor = 0xFF37872F.toInt()
+    private var overSpeedometerColor = 0xFF9B2020.toInt()
     private var pointerColor = 0xFFFFFFFF.toInt()
 
     private var withPointer = true
