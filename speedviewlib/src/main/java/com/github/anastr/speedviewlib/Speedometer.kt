@@ -336,7 +336,7 @@ abstract class Speedometer @JvmOverloads constructor(
         markPaint.style = Paint.Style.STROKE
         markSecondaryPaint.style = Paint.Style.STROKE
         markColor = 0xFFFFFFFF.toInt()
-        markSecondaryColor = 0xFFAAAAAA.toInt()
+        markSecondaryColor = 0x80FFFFFF.toInt()
         markWidth = dpTOpx(3f)
         markStyle = Style.BUTT
 //        indicator = NoIndicator(context)
@@ -359,6 +359,7 @@ abstract class Speedometer @JvmOverloads constructor(
         markHeight = a.getDimension(R.styleable.Speedometer_sv_markHeight, markHeight)
         markWidth = a.getDimension(R.styleable.Speedometer_sv_markWidth, markWidth)
         markColor = a.getColor(R.styleable.Speedometer_sv_markColor, markColor)
+        markSecondaryColor = a.getColor(R.styleable.Speedometer_sv_markSecondaryColor, markSecondaryColor)
         val markStyleIndex = a.getInt(R.styleable.Speedometer_sv_markStyle, -1)
         if (markStyleIndex != -1)
             markStyle = Style.values()[markStyleIndex]

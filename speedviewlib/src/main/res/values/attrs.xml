@@ -83,6 +83,7 @@
         <attr name="sv_markHeight" format="dimension" />
         <attr name="sv_markWidth" format="dimension" />
         <attr name="sv_markColor" format="color" />
+        <attr name="sv_markSecondaryColor" format="color" />
         <attr name="sv_markStyle" format="enum" >
             <enum name="ROUND" value="0" />
             <enum name="BUTT" value="1" />
