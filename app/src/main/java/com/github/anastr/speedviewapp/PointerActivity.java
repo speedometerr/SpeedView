@@ -35,6 +35,8 @@ public class PointerActivity extends AppCompatActivity {
         textSpeed = findViewById(R.id.textSpeed);
         textSpeedChange = findViewById(R.id.textSpeedChange);
 
+        pointerSpeedometer.setRecommendedSpeed(50f);
+
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

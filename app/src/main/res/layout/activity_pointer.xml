@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#ff48cce9"
+    android:background="#ff3C3C3C"
     android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.github.anastr.speedviewapp.PointerActivity">
 
     <com.github.anastr.speedviewlib.PointerSpeedometer
@@ -17,21 +17,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        app:sv_unitTextSize="15sp"
-        app:sv_speedTextTypeface="fonts/good-times.ttf" />
+        app:sv_backgroundCircleColor="@android:color/transparent"
+        app:sv_centerCircleColor="@android:color/transparent"
+        app:sv_centerCircleRadius="0dp"
+        app:sv_markColor="#FFFFFFFF"
+        app:sv_markHeight="14dp"
+        app:sv_markSecondaryColor="#80FFFFFF"
+        app:sv_markStyle="ROUND"
+        app:sv_markWidth="2dp"
+        app:sv_marksNumber="21"
+        app:sv_marksPadding="9dp"
+        app:sv_maxSpeed="110"
+        app:sv_overSpeedometerColor="#FFFF5E5E"
+        app:sv_speedTextColor="#FFFFFFFF"
+        app:sv_speedTextFormat="INTEGER"
+        app:sv_speedTextPadding="60dp"
+        app:sv_speedTextPosition="BOTTOM_CENTER"
+        app:sv_speedTextSize="40dp"
+        app:sv_speedTextTypeface="fonts/good-times.ttf"
+        app:sv_speedometerColor="#FF3C8CE4"
+        app:sv_speedometerWidth="16dp"
+        app:sv_textColor="#FFFFFFFF"
+        app:sv_tickNumber="12"
+        app:sv_tickPadding="28dp"
+        app:sv_unit="km/h"
+        app:sv_unitTextColor="#FFC5C5C5"
+        app:sv_unitTextSize="14dp"
+        app:sv_unitUnderSpeedText="false"
+        app:sv_withPointer="false"
+        app:sv_withTremble="false" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <SeekBar
             android:id="@+id/seekBarSpeed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:max="100"
-            android:layout_gravity="center_vertical"/>
+            android:max="100" />
 
         <TextView
             android:id="@+id/textSpeed"
@@ -52,8 +79,8 @@
         android:id="@+id/textSpeedChange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:textColor="#fff"
-        tools:text="onSpeedChange"/>
+        android:textSize="20sp"
+        tools:text="onSpeedChange" />
 
 </LinearLayout>

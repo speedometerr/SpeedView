@@ -57,6 +57,7 @@ abstract class Speedometer @JvmOverloads constructor(
     private val circleBackPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val indicatorLightPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     protected val markPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+    protected val markSecondaryPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     override var speedometerWidth
         get() = super.speedometerWidth
@@ -81,6 +82,11 @@ abstract class Speedometer @JvmOverloads constructor(
         set(markColor) {
             markPaint.color = markColor
         }
+    var markSecondaryColor
+        get() = markSecondaryPaint.color
+        set(markSecondaryColor) {
+            markSecondaryPaint.color = markSecondaryColor
+        }
     var marksPadding = 0f
         set(marksPadding) {
             field = marksPadding
@@ -95,15 +101,19 @@ abstract class Speedometer @JvmOverloads constructor(
         get() = markPaint.strokeWidth
         set(markWidth) {
             markPaint.strokeWidth = markWidth
+            markSecondaryPaint.strokeWidth = markWidth
             invalidateGauge()
         }
     var markStyle
         get() = if (markPaint.strokeCap == Paint.Cap.ROUND) Style.ROUND else Style.BUTT
         set(markStyle) {
-            if (markStyle == Style.ROUND)
+            if (markStyle == Style.ROUND) {
                 markPaint.strokeCap = Paint.Cap.ROUND
-            else
+                markSecondaryPaint.strokeCap = Paint.Cap.ROUND
+            }else {
                 markPaint.strokeCap = Paint.Cap.BUTT
+                markSecondaryPaint.strokeCap = Paint.Cap.BUTT
+            }
             invalidateGauge()
         }
 
@@ -182,7 +192,7 @@ abstract class Speedometer @JvmOverloads constructor(
         }
 
     /** to rotate tick label  */
-    private var tickRotation = true
+    private var tickRotation = false
     /**
      *  first padding, set by speedometer.
      *  this will not redraw background bitmap.
@@ -324,7 +334,9 @@ abstract class Speedometer @JvmOverloads constructor(
     private fun init() {
         indicatorLightPaint.style = Paint.Style.STROKE
         markPaint.style = Paint.Style.STROKE
+        markSecondaryPaint.style = Paint.Style.STROKE
         markColor = 0xFFFFFFFF.toInt()
+        markSecondaryColor = 0x80FFFFFF.toInt()
         markWidth = dpTOpx(3f)
         markStyle = Style.BUTT
 //        indicator = NoIndicator(context)
@@ -347,6 +359,7 @@ abstract class Speedometer @JvmOverloads constructor(
         markHeight = a.getDimension(R.styleable.Speedometer_sv_markHeight, markHeight)
         markWidth = a.getDimension(R.styleable.Speedometer_sv_markWidth, markWidth)
         markColor = a.getColor(R.styleable.Speedometer_sv_markColor, markColor)
+        markSecondaryColor = a.getColor(R.styleable.Speedometer_sv_markSecondaryColor, markSecondaryColor)
         val markStyleIndex = a.getInt(R.styleable.Speedometer_sv_markStyle, -1)
         if (markStyleIndex != -1)
             markStyle = Style.values()[markStyleIndex]
@@ -450,15 +463,16 @@ abstract class Speedometer @JvmOverloads constructor(
      */
     protected fun drawMarks(canvas: Canvas) {
         markPath.reset()
+
         markPath.moveTo(size * .5f, marksPadding + padding)
         markPath.lineTo(size * .5f, marksPadding + markHeight + padding)
 
         canvas.save()
         canvas.rotate(90f + getStartDegree(), size * .5f, size * .5f)
         val everyDegree = (getEndDegree() - getStartDegree()) / (marksNumber + 1f)
-        for (i in 1..marksNumber) {
+        for (i in 0..marksNumber+1) {
+            canvas.drawPath(markPath, if(i % 2 == 0) markPaint else markSecondaryPaint)
             canvas.rotate(everyDegree, size * .5f, size * .5f)
-            canvas.drawPath(markPath, markPaint)
         }
         canvas.restore()
     }
