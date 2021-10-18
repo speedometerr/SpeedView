@@ -28,7 +28,16 @@ open class PointerSpeedometer @JvmOverloads constructor(
     private var overSpeedometerColor = 0xFF9B2020.toInt()
     private var pointerColor = 0xFFFFFFFF.toInt()
 
-    private var withPointer = true
+    private var withPointer = false
+    private var _recommendedSpeed = 40f
+
+    var recommendedSpeed: Float
+        get() = _recommendedSpeed
+        set(recommendedSpeed) {
+            _recommendedSpeed = recommendedSpeed
+            if (isAttachedToWindow)
+                invalidate()
+        }
 
     /**
      * change the color of the center circle.
@@ -147,7 +156,6 @@ open class PointerSpeedometer @JvmOverloads constructor(
         super.onDraw(canvas)
         initDraw()
 
-        val recommendedSpeed = 40f
         val recommendedDegree = getDegreeAtSpeed(recommendedSpeed)
         var sweepAngle = (recommendedDegree - getStartDegree())
         canvas.drawArc(speedometerRect, getStartDegree().toFloat(), sweepAngle, false, speedometerPaint)

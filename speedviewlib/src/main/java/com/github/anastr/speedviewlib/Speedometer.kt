@@ -192,7 +192,7 @@ abstract class Speedometer @JvmOverloads constructor(
         }
 
     /** to rotate tick label  */
-    private var tickRotation = true
+    private var tickRotation = false
     /**
      *  first padding, set by speedometer.
      *  this will not redraw background bitmap.
