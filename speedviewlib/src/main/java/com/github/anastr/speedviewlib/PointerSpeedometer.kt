@@ -29,7 +29,7 @@ open class PointerSpeedometer @JvmOverloads constructor(
     private var pointerColor = 0xFFFFFFFF.toInt()
 
     private var withPointer = false
-    private var _recommendedSpeed = 40f
+    private var _recommendedSpeed = 0f
 
     var recommendedSpeed: Float
         get() = _recommendedSpeed
@@ -159,7 +159,7 @@ open class PointerSpeedometer @JvmOverloads constructor(
         val recommendedDegree = getDegreeAtSpeed(recommendedSpeed)
         var sweepAngle = (recommendedDegree - getStartDegree())
         canvas.drawArc(speedometerRect, getStartDegree().toFloat(), sweepAngle, false, speedometerPaint)
-        if(currentSpeed > recommendedSpeed) {
+        if(recommendedSpeed > 0 && currentSpeed > recommendedSpeed) {
             sweepAngle = (getEndDegree() - getStartDegree()) * getOffsetSpeed()  - (recommendedDegree - getStartDegree())
             canvas.drawArc(speedometerRect, recommendedDegree, sweepAngle, false, overSpeedometerPaint)
         }
