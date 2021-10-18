@@ -7,7 +7,7 @@
     app:cardCornerRadius="8dp"
     app:cardBackgroundColor="#e2e2e2">
 
-    <com.github.anastr.speedviewlib.SpeedView
+    <com.github.speedometerr.speedviewlib.SpeedView
         android:id="@+id/speedometer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

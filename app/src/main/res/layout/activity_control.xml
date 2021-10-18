@@ -8,10 +8,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.github.anastr.speedviewapp.ControlActivity"
+    tools:context="com.github.speedometerr.speedviewapp.ControlActivity"
     tools:ignore="HardcodedText">
 
-    <com.github.anastr.speedviewlib.SpeedView
+    <com.github.speedometerr.speedviewlib.SpeedView
         android:id="@+id/awesomeSpeedometer"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

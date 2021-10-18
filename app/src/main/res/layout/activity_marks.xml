@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".MarksActivity">
 
-    <com.github.anastr.speedviewlib.SpeedView
+    <com.github.speedometerr.speedviewlib.SpeedView
         android:id="@+id/speedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

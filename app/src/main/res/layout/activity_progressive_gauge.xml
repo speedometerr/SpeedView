@@ -9,9 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.github.anastr.speedviewapp.lineargauge.ProgressiveGaugeActivity">
+    tools:context="com.github.speedometerr.speedviewapp.lineargauge.ProgressiveGaugeActivity">
 
-    <com.github.anastr.speedviewlib.ProgressiveGauge
+    <com.github.speedometerr.speedviewlib.ProgressiveGauge
         android:id="@+id/gauge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

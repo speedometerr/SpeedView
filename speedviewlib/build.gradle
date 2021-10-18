@@ -65,7 +65,7 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                groupId = 'com.github.anastr'
+                groupId = 'com.github.speedometerr'
                 artifactId = 'speedviewlib'
                 version = this.version
 
@@ -80,7 +80,7 @@ afterEvaluate {
                 pom {
                     name = 'SpeedView'
                     description = 'Dynamic Speedometer and Gauge for Android. amazing, powerful, and multi shape.'
-                    url = 'https://github.com/anastr/SpeedView'
+                    url = 'https://github.com/speedometerr/SpeedView'
                     signing {
                         sign publishing.publications.release
 //                        sign configurations.archives
@@ -93,15 +93,15 @@ afterEvaluate {
                     }
                     developers {
                         developer {
-                            id = 'anastr'
+                            id = 'speedometerr'
                             name = 'Anas Altair'
                             email = properties.getProperty("userEmail")
                         }
                     }
                     scm {
-                        connection = 'scm:git:github.com/anastr/SpeedView.git'
-                        developerConnection = 'scm:git:ssh://github.com/anastr/SpeedView.git'
-                        url = 'https://github.com/anastr/SpeedView'
+                        connection = 'scm:git:github.com/speedometerr/SpeedView.git'
+                        developerConnection = 'scm:git:ssh://github.com/speedometerr/SpeedView.git'
+                        url = 'https://github.com/speedometerr/SpeedView'
                     }
                     withXml {
                         def dependenciesNode = asNode().appendNode('dependencies')

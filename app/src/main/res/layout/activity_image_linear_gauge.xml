@@ -9,9 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.github.anastr.speedviewapp.lineargauge.ImageLinearGaugeActivity">
+    tools:context="com.github.speedometerr.speedviewapp.lineargauge.ImageLinearGaugeActivity">
 
-    <com.github.anastr.speedviewlib.ImageLinearGauge
+    <com.github.speedometerr.speedviewlib.ImageLinearGauge
         android:id="@+id/gauge"
         android:layout_width="wrap_content"
         android:layout_height="300dp"

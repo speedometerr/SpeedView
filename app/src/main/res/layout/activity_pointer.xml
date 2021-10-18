@@ -10,9 +10,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.github.anastr.speedviewapp.PointerActivity">
+    tools:context="com.github.speedometerr.speedviewapp.PointerActivity">
 
-    <com.github.anastr.speedviewlib.PointerSpeedometer
+    <com.github.speedometerr.speedviewlib.PointerSpeedometer
         android:id="@+id/pointerSpeedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

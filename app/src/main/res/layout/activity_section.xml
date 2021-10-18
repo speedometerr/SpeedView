@@ -9,9 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.github.anastr.speedviewapp.DeluxeSpeedActivity">
+    tools:context="com.github.speedometerr.speedviewapp.DeluxeSpeedActivity">
 
-    <com.github.anastr.speedviewlib.SpeedView
+    <com.github.speedometerr.speedviewlib.SpeedView
         android:id="@+id/speedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

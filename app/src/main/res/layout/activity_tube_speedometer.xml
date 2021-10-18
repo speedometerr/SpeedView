@@ -9,9 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.github.anastr.speedviewapp.SpeedViewActivity">
+    tools:context="com.github.speedometerr.speedviewapp.SpeedViewActivity">
 
-    <com.github.anastr.speedviewlib.TubeSpeedometer
+    <com.github.speedometerr.speedviewlib.TubeSpeedometer
         android:id="@+id/speedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

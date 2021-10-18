@@ -10,9 +10,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.github.anastr.speedviewapp.ImageSpeedometerActivity">
+    tools:context="com.github.speedometerr.speedviewapp.ImageSpeedometerActivity">
 
-    <com.github.anastr.speedviewlib.ImageSpeedometer
+    <com.github.speedometerr.speedviewlib.ImageSpeedometer
         android:id="@+id/imageSpeedometer"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

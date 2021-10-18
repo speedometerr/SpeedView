@@ -125,7 +125,7 @@ More advanced features:
     <td width="22%"><img src="/images/SpeedView3.png"/></td>
     <td>
        <pre>
-&lt; com.github.anastr.speedviewlib.SpeedView
+&lt; com.github.speedometerr.speedviewlib.SpeedView
         android:id="@+id/speedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -138,7 +138,7 @@ More advanced features:
     <td><img src="/images/DeluxeSpeedView2.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.DeluxeSpeedView
+&lt; com.github.speedometerr.speedviewlib.DeluxeSpeedView
         android:id="@+id/deluxeSpeedView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -151,7 +151,7 @@ More advanced features:
     <td><img src="/images/AwesomeSpeedometer.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.AwesomeSpeedometer
+&lt; com.github.speedometerr.speedviewlib.AwesomeSpeedometer
         android:id="@+id/awesomeSpeedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -164,7 +164,7 @@ More advanced features:
     <td><img src="/images/RaySpeedometer.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.RaySpeedometer
+&lt; com.github.speedometerr.speedviewlib.RaySpeedometer
         android:id="@+id/raySpeedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -177,7 +177,7 @@ More advanced features:
     <td><img src="/images/PointerSpeedometer.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.PointerSpeedometer
+&lt; com.github.speedometerr.speedviewlib.PointerSpeedometer
         android:id="@+id/pointerSpeedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -190,7 +190,7 @@ More advanced features:
     <td><img src="/images/TubeSpeedometer.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.TubeSpeedometer
+&lt; com.github.speedometerr.speedviewlib.TubeSpeedometer
         android:id="@+id/tubeSpeedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -203,7 +203,7 @@ More advanced features:
     <td><img src="/images/ImageSpeedometer.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.ImageSpeedometer
+&lt; com.github.speedometerr.speedviewlib.ImageSpeedometer
         android:id="@+id/imageSpeedometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -217,7 +217,7 @@ More advanced features:
     <td><img src="/images/ProgressiveGauge.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.ProgressiveGauge
+&lt; com.github.speedometerr.speedviewlib.ProgressiveGauge
         android:id="@+id/gauge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -230,7 +230,7 @@ More advanced features:
     <td><img src="/images/ImageLinearGauge.png"/></td>
     <td>
       <pre>
-&lt; com.github.anastr.speedviewlib.ImageLinearGauge
+&lt; com.github.speedometerr.speedviewlib.ImageLinearGauge
         android:id="@+id/gauge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
