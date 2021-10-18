@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import com.github.anastr.speedviewlib.components.Style
 import com.github.anastr.speedviewlib.components.indicators.SpindleIndicator
 import com.github.anastr.speedviewlib.util.getRoundAngle
+import java.lang.Float.min
 
 /**
  * this Library build By Anas Altair
@@ -156,7 +157,7 @@ open class PointerSpeedometer @JvmOverloads constructor(
         super.onDraw(canvas)
         initDraw()
 
-        val recommendedDegree = getDegreeAtSpeed(recommendedSpeed)
+        val recommendedDegree = getDegreeAtSpeed(minOf(recommendedSpeed, maxSpeed))
         var sweepAngle = (recommendedDegree - getStartDegree())
         canvas.drawArc(speedometerRect, getStartDegree().toFloat(), sweepAngle, false, speedometerPaint)
         if(recommendedSpeed > 0 && currentSpeed > recommendedSpeed) {
